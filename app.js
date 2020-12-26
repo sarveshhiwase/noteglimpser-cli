@@ -136,7 +136,7 @@ const read = function () {
   });
 };
 
-const parser = yargs.parse;
+const Noteparser = yargs.parse;
 
 const makeNotes = () => {
   fileExist();
@@ -144,7 +144,7 @@ const makeNotes = () => {
   read();
   list();
   remove();
-  parser();
+  Noteparser();
 };
 
-module.exports = { makeNotes };
+module.exports = makeNotes;
