@@ -138,4 +138,13 @@ const read = function () {
 
 const parser = yargs.parse;
 
-module.exports = { add, read, list, remove, parser, fileExist };
+const makeNotes = () => {
+  fileExist();
+  add();
+  read();
+  list();
+  remove();
+  parser();
+};
+
+module.exports = { makeNotes };

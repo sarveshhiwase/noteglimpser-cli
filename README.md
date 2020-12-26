@@ -6,25 +6,44 @@ It uses JSON to store data on local machine in a local file(data.json in your di
 
 Dependencies used are Chalk and fs.
 
-Install noteglimpser-
+## Methods
 
-<h4>npm i noteglimpser</h4>
+- makeNotes() - Standalone Function to get Notes in your app.
 
-Methods
+## Example HOW to USE-
 
-<h1 >add - <p>adds a add arg command to your application(CLI). </p></h1>
-<h1>list - <p>adds a list arg command to your application(CLI).</p></h1>
-<h1>remove -<p>adds a remove arg command to your application(CLI).</p></h1>
-<h1>read -<p>adds a read arg command to your application(CLI).</p></h1>
+```
+#Install noteglimpser
+npm i noteglimpser
 
-Example HOW to USE-
+#Import noteglimpser in your app
+const noteglimpser = require('noteglimpser');
 
-<h4>const noteglimpser = require('noteglimpser');</h4>
-<h4>noteglimpser.fileExist();</h4>
-<h4>noteglimpser.add();</h4>
-<h4>noteglimpser.read();</h4>
-<h4>noteglimpser.list();</h4>
-<h4>noteglimpser.remove();</h4>
-<h4>noteglimpser.parser();</h4>
+#Call Function note Glimpser
+noteglimpser();
 
-<h2>Using this boiler plate your application will be ready to take your notes on the GO!!... </h2>
+#Adding a note
+node your_app.js add --title "Be Nice" --body "Have a Good Day"
+Output  in various colors-
+Be Nice
+Have a Good Day
+
+#Reading a note
+node your_app.js read --title "Be Nice"
+Output  in various colors-
+Reading your note
+Be Nice
+Have a Good Day
+
+#Listing all Your Notes
+node your_app.js list
+Output  in various colors-
+Be Nice
+Have a Good Day
+
+#Removing a note
+node your_app.js remove --title "Be nice"
+Removing your note
+Be Nice
+Have a Good Day
+```
