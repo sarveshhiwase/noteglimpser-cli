@@ -5,7 +5,7 @@
     "yargs": "^16.2.0"
   },
   "name": "noteglimpser",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A note taking App for your notes.",
   "main": "app.js",
   "scripts": {
