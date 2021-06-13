@@ -12,5 +12,6 @@
   "description": "A CLI note taking App for your notes.",
   "main": "app.js",
   "author": "Sarvesh Hiwase",
-  "license": "ISC"
+  "license": "ISC",
+  "keywords": ["cli","javascript","note-taking-cli","yargs","chalk","todo-app"]
 }
