@@ -4,13 +4,13 @@
     "validator": "^10.8.0",
     "yargs": "^16.2.0"
   },
-  "name": "noteglimpser",
-  "version": "1.0.4",
-  "description": "A note taking App for your notes.",
-  "main": "app.js",
-  "scripts": {
-    "start": "node app.js"
+  "bin": {
+    "noteglimpser":"app.js"
   },
+  "name": "noteglimpser",
+  "version": "1.0.5",
+  "description": "A CLI note taking App for your notes.",
+  "main": "app.js",
   "author": "Sarvesh Hiwase",
   "license": "ISC"
 }

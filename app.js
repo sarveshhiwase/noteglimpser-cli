@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 // Necessary Imports
 const fs = require("fs");
 const notes = require("./notes");
@@ -147,4 +149,4 @@ const makeNotes = () => {
   Noteparser();
 };
 
-module.exports = makeNotes;
+makeNotes();
