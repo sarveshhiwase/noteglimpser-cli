@@ -47,3 +47,7 @@ Removing your note
 Be Nice
 Have a Good Day
 ```
+
+## Tutorial
+
+![Note Tutorial](https://github.com/sarveshhiwase/noteglimpser-cli/blob/master/img/note.png?raw=true)
