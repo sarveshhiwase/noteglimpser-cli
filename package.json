@@ -1,17 +1,24 @@
 {
   "dependencies": {
     "chalk": "^2.4.1",
-    "validator": "^10.8.0",
+    "validator": "^13.7.0",
     "yargs": "^16.2.0"
   },
   "bin": {
-    "noteglimpser":"app.js"
+    "noteglimpser": "app.js"
   },
   "name": "noteglimpser",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A CLI note taking App for your notes.",
   "main": "app.js",
   "author": "Sarvesh Hiwase",
   "license": "ISC",
-  "keywords": ["cli","javascript","note-taking-cli","yargs","chalk","todo-app"]
+  "keywords": [
+    "cli",
+    "javascript",
+    "note-taking-cli",
+    "yargs",
+    "chalk",
+    "todo-app"
+  ]
 }

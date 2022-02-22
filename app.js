@@ -1,37 +1,36 @@
 #!/usr/bin/env node
 
 // Necessary Imports
-const fs = require("fs");
-const notes = require("./notes");
-const chalk = require("chalk");
-const yargs = require("yargs");
+const fs = require('fs');
+const notes = require('./notes');
+const chalk = require('chalk');
+const yargs = require('yargs');
 // Necessary logshortner
-const cp = console.log;
+const cl = console.log;
 
-/**
+/*
  * Function for Checking the file Exists or not
  */
 const fileExist = function () {
-  const jsonfile = "./data.json";
+  const jsonfile = './data.json';
   const jsonArrayfornotes = [];
   const jsondata = JSON.stringify(jsonArrayfornotes);
 
   try {
-    if (fs.existsSync(jsonfile)) {
-    } else {
+    if (!fs.existsSync(jsonfile)) {
       fs.writeFileSync(jsonfile, jsondata);
     }
   } catch (err) {
-    cp(err);
+    cl(err);
   }
 };
 fileExist();
 
-/**
+/*
  * Function for Adding a new note
  */
 function addNewNote() {
-  cp("Adding Your new note");
+  cl('Adding Your new note');
   const noteobj = {
     title: yargs.argv.title,
     body: yargs.argv.body,
@@ -39,54 +38,51 @@ function addNewNote() {
   notes.setNotes(noteobj);
   const blueTitle = chalk.blue(noteobj.title);
   const YellowBody = chalk.yellow(noteobj.body);
-  cp(blueTitle);
-  cp(YellowBody);
+  cl(blueTitle);
+  cl(YellowBody);
 }
 
-/**
+/*
  * Function for Removing a Existing note
  */
 function removeNote() {
-  cp("Removing your this note");
+  cl('Removing your this note');
   const titlenote = yargs.argv.title;
   notes.removeNotes(titlenote);
   const blueTitle = chalk.blue(titlenote);
-  cp(blueTitle);
+  cl(blueTitle);
 }
 
-/**
+/*
  * Function for Reading a Existing note
  */
 function readNote() {
-  cp("Reading your note");
+  cl('Reading your note');
   const titlenote = yargs.argv.title;
   const returnedNote = notes.getNote(titlenote);
-  if (typeof returnedNote === "object") {
+  if (typeof returnedNote === 'object') {
     const blueTitle = chalk.blue(returnedNote.title);
     const YellowBody = chalk.yellow(returnedNote.body);
-    cp(blueTitle);
-    cp(YellowBody);
+    cl(blueTitle);
+    cl(YellowBody);
   }
 }
 
 // Create a add command for YOUR CLI
 const add = function () {
   yargs.command({
-    command: "add",
-    describe: "Add a new note",
-    // handler: function(){
-    //    cp('Adding a new note');
-    // }
+    command: 'add',
+    describe: 'Add a new note',
     builder: {
       title: {
-        describe: "Title of your note",
+        describe: 'Title of your note',
         demandOption: true,
-        type: "string",
+        type: 'string',
       },
       body: {
-        describe: "Body of Your Note",
+        describe: 'Body of Your Note',
         demandOption: true,
-        type: "string",
+        type: 'string',
       },
     },
     handler: addNewNote,
@@ -96,13 +92,13 @@ const add = function () {
 // Create a remove command for YOUR CLI
 const remove = function () {
   yargs.command({
-    command: "remove",
-    describe: "remove a existing note",
+    command: 'remove',
+    describe: 'remove a existing note',
     builder: {
       title: {
-        describe: "Title of your note",
+        describe: 'Title of your note',
         demandOption: true,
-        type: "string",
+        type: 'string',
       },
     },
     handler: removeNote,
@@ -112,11 +108,11 @@ const remove = function () {
 // Create a list command for YOUR CLI
 const list = function () {
   yargs.command({
-    command: "list",
-    describe: "List all your notes",
+    command: 'list',
+    describe: 'List all your notes',
     handler: function () {
       //Get all the notes stored in JSON file
-      cp("Listing All Your Notes");
+      cl('Listing All Your Notes');
       notes.getAllNotes();
     },
   });
@@ -125,13 +121,13 @@ const list = function () {
 // Create a Read command for YOUR CLI
 const read = function () {
   yargs.command({
-    command: "read",
-    describe: "read a existing note",
+    command: 'read',
+    describe: 'Read a existing note',
     builder: {
       title: {
-        describe: "Title of your note",
+        describe: 'Title of your note',
         demandOption: true,
-        type: "string",
+        type: 'string',
       },
     },
     handler: readNote,
